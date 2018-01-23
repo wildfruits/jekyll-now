@@ -1,3 +1,8 @@
+---
+layout: post
+title: KDD
+---
+
 ### Format
 
 A typical algebra or geometry **problem** involves a number of predetermined steps a student will have to complete before they can arrive at a final answer. The student's completion of each **step** is recorded by the software as a transaction and appears as a single row entry in our data table.
