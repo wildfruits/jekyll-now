@@ -1,10 +1,12 @@
 ---
-title: KDD Challenge Part 2 - Feature Engineering 1 - Adding Feature Columns
+title: KDD Challenge Part 2 - Feature Engineering 1 
 date: 2017-07-10 17:35:55
 tags:
 ---
 
-Recall that we want to be able to sort problems into categories with descriptive labels. We would like to know if a problem is an algebra problem, geometry problem, etc. and break it down further from there. We will be using feature engineering to create additional feature columns for this dataset that we can use to discover relationships within our data.
+Knowledge component (KC) as defined by PSLC is "a generalization of everyday terms like concept, principle, fact, or skill, and cognitive science terms like schema, production rule, misconception, or facet."
+
+One way I can define proficiency at a KC is by observing the number of times a student answers a question containing a particular KC correctly on the first try as a fraction of how many times they encounter questions containing that KC. This is a simplified assessment; student performance tends to improve over time, so a more detailed model would take temporal relationships into account; students only see remedial problems if they don’t do well on the original problems they are given, so a more detailed model would take such causal relationships into account.
 
 ## Additional Features
 
@@ -17,7 +19,7 @@ df[['Opps1', 'Opps2', 'Opps3', 'Opps4', 'Opps5', 'Opps6', 'Opps7']] = df['Opport
 
 This splits the **KC(Default)** and **Opportunity(Default)** columns at every point where we encounter a **~~** delimiter that indicates a separate KC or corresponding Opportunity count.
 
-We convert the Opportunity column data types from string to numeric and drop the time-related columns since we won't be using them for this part of our analysis.
+I convert the Opportunity column data types from string to numeric and drop the time-related columns since I won't be using them for this part of the analysis.
 
 ```python
 df['Opps1'] = pd.to_numeric(df['Opps1'])
@@ -29,6 +31,4 @@ df = df.drop('Step End Time', 1)
 df = df.drop('Correct Step Duration (sec)', 1)
 ...
 ```
-This gives us a dataframe with multiple KC and Opportunity columns corresponding to each KC a student encounters in a student-step record. Our goal at this stage is to get a list of each KC each student encounters and the total number of times they encounter that KC, given by the highest Opportunity count corresponding to that KC. We will then determine the number of Correct First Attempts that student achieved for that KC and get a ratio of CFAs to total Opportunity count. This will be discussed in more detail in the next post.
-
-**Next time:** We'll use groupby to get counts of the KCs each student encounters and use this to calculate the ratio of Correct First Attempts to total Opportunity count per KC.
+This gives us a dataframe with multiple KC and Opportunity columns corresponding to each KC a student encounters in a student-step record. 
