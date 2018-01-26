@@ -8,7 +8,7 @@ Knowledge component (KC) as defined by PSLC is "a generalization of everyday ter
 
 One way I can define proficiency at a KC is by observing the number of times a student answers a question containing a particular KC correctly on the first try as a fraction of how many times they encounter questions containing that KC. This is a simplified assessment; first, student performance tends to improve over time, so a more detailed model would take temporal relationships into account; second, students only see remedial problems if they don’t do well on the original problems they are given, so a more detailed model would take these causal relationships into account.
 
-## Additional Features
+## Feature Extraction
 
 One way to extract multiple columns from a single column using strings with a known character delimiter is **str.split()**. Because **KC(Default)** and **Opportunity(Default)** both use **~~** as a delimiter, we can split on this substring.
 
@@ -32,3 +32,10 @@ df = df.drop('Correct Step Duration (sec)', 1)
 ...
 ```
 This gives us a dataframe with multiple KC and Opportunity columns corresponding to each KC a student encounters in a student-step record. 
+
+## Metric
+
+Because this data is imbalanced, (about 77% of the observations have target “Correct First Attempt” values of 1 and 23% have target values of 0), a naive model can achieve an accuracy of 77% by simply guessing 1 for every observation (the "most_frequent" strategy). This is not an acceptable solution because we also want to be able to identify negative cases accurately, i.e. students who do not answer questions correctly on the first try. This 77% “success” rate is due to the classes being imbalanced, not to the classifier being useful.
+
+Due to the class imbalance, accuracy is not a useful metric for this model, and I will be using F1 score, which provides the more detailed information I need about the model’s predictive power for both classes. In order to draw a meaningful baseline solution, I am using a dummy model with the default "stratified" strategy, which respects the original class frequency of the target variable.
+
