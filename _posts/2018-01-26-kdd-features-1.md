@@ -41,7 +41,9 @@ Some more useful metrics for this dataset are F-score and AUC/ROC, both of which
 
 F1 score (balanced F-score) is computed as follows:
 
+
 ![image](/images/f1 score.gif)
+
 
 Precision, also called positive (or negative) predictive value in medical and other diagnostic contexts, can be articulated as “If the model says a value is 1 (or 0), what is the probability it is actually 1 (or 0)?” Recall, also called sensitivity, can be expressed as “If a value is 1 (or 0), what is the probability the model correctly identifies it as 1 (or 0)?” F1 score  is the harmonic mean of these two measures.
 
