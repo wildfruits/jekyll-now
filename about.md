@@ -6,4 +6,4 @@ permalink: /about/
 
 ### Contact me
 
-[wildfruits630@gmail.com](mailto:wildfruits630@gmail.com)
+[email](mailto:wildfruits630@gmail.com)
