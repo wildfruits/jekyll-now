@@ -39,3 +39,7 @@ Because this data is imbalanced, (about 77% of the observations have target “C
 
 Some more useful metrics for this dataset are F-score and AUC/ROC, both of which provide the more detailed information I need about the model’s predictive power for both classes. In order to draw a meaningful baseline solution, I am using a dummy model with the default "stratified" strategy, which respects the original class frequency of the target variable.
 
+F1 score (balanced F-score) is computed as follows:
+[/images/f1 score.gif]
+Precision, also called positive (or negative) predictive value in medical and other diagnostic contexts, can be articulated as “If the model says a value is 1 (or 0), what is the probability it is actually 1 (or 0)?” Recall, also called sensitivity, can be expressed as “If a value is 1 (or 0), what is the probability the model correctly identifies it as 1 (or 0)?” F1 score  is the harmonic mean of these two measures.
+
