@@ -4,7 +4,7 @@ date: 2017-07-10 17:35:55
 tags:
 ---
 
-Knowledge component (KC) as defined by PSLC is "a generalization of everyday terms like concept, principle, fact, or skill, and cognitive science terms like schema, production rule, misconception, or facet."
+Knowledge component (KC) as defined by PSLC is "a generalization of everyday terms like concept, principle, fact, or skill, and cognitive science terms like schema, production rule, misconception [sic], or facet."
 
 One way I can define proficiency at a KC is by observing the number of times a student answers a question containing a particular KC correctly on the first try as a fraction of how many times they encounter questions containing that KC. This is a simplified assessment; first, student performance tends to improve over time, so a more detailed model would take temporal relationships into account; second, students only see remedial problems if they don’t do well on the original problems they are given, so a more detailed model would take these causal relationships into account.
 
